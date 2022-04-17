@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css'
-import logo from '../../../Images/logo.jpg';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCameraRetro } from '@fortawesome/free-solid-svg-icons';
 import { signOut } from 'firebase/auth';
 const Header = () => {
     const [user] = useAuthState(auth);
@@ -14,7 +15,7 @@ const Header = () => {
         <div className='header '>
             <nav className='mx-auto d-flex  align-items-center'>
 
-                <Link to='/home'><img src={logo} width={50} alt="" /></Link>
+                <Link to='/home'><FontAwesomeIcon className='text-dark  logo' icon={faCameraRetro}></FontAwesomeIcon></Link>
                 <Link to='/' >Home</Link>
                 <Link to='/home#services'>Services</Link>
                 <Link to='/blogs'>Blogs</Link>

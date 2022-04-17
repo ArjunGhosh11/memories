@@ -1,0 +1,10 @@
+.text-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 440px;
+}
+
+.form {
+    height: 392px;
+}

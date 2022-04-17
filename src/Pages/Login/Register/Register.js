@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -24,6 +24,8 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
+    const [sendEmailVerification] = useSendEmailVerification(auth);
+
     if (loading) {
         return <p>Loading...</p>
     }
@@ -42,6 +44,8 @@ const Register = () => {
         const password = passwordRef.current.value;
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name })
+        await sendEmailVerification();
+        toast('Sent email');
         navigate('/home');
 
     }
@@ -50,7 +54,7 @@ const Register = () => {
     }
 
     return (
-        <div className='container w-50 mx-auto p-5 my-5'>
+        <div className='container w-50 mx-auto p-2 my-5'>
             <h2 className='text-dark text-center mt-2'>Please Register</h2>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -67,7 +71,7 @@ const Register = () => {
                 </Button>
             </Form>
             {errorElement}
-            <p>Already have an account? <Link to="/login" className='text-primary pe-auto text-decoration-none' onClick={navigateLogin}>Please Login</Link> </p>
+            <p className='text-center'>Already have an account? <Link to="/login" className='text-primary pe-auto text-decoration-none' onClick={navigateLogin}>Please Login</Link> </p>
             <SocialLogin ></SocialLogin>
             <ToastContainer />
         </div>
