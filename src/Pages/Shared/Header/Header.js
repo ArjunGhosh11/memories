@@ -13,16 +13,15 @@ const Header = () => {
     return (
         <div className='header '>
             <nav className='mx-auto d-flex  align-items-center'>
-                <div>
-                    <Link to='/home'><img src={logo} width={50} alt="" /></Link>
-                    <Link to='/' >Home</Link>
-                    <Link to='/home#services'>Services</Link>
-                    <Link to='/blogs'>Blogs</Link>
-                </div>
-                <div>
-                    <Link to='/about'>About</Link>
-                    <Link to='/about'>Login</Link>
-                </div>
+
+                <Link to='/home'><img src={logo} width={50} alt="" /></Link>
+                <Link to='/' >Home</Link>
+                <Link to='/home#services'>Services</Link>
+                <Link to='/blogs'>Blogs</Link>
+
+                <Link to='/about'>About</Link>
+                <Link to='/login'>Login</Link>
+
             </nav>
         </div>
     );

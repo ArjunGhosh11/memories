@@ -1,0 +1,32 @@
+.service {
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    border-radius: 40px;
+    padding: 10px;
+    box-shadow: 5px 10px 8px 10px #888888;
+}
+
+.service img {
+    width: 150px;
+    height: 230px;
+    border-radius: 20px;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.checkout-button {
+    border: 0px;
+    color: aliceblue;
+    font-weight: bolder;
+    padding: 10px 30px;
+    border-radius: 20px;
+    background-image: linear-gradient(grey, black);
+}
