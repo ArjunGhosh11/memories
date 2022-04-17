@@ -1,11 +1,13 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { async } from '@firebase/util';
+import { updateProfile } from 'firebase/auth';
 const Register = () => {
     const nameRef = useRef('');
     const emailRef = useRef('');
@@ -16,18 +18,15 @@ const Register = () => {
     let from = location.state?.from?.pathname || "/";
     let errorElement;
     const [
-        signInWithEmailAndPassword,
+        createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useSignInWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth);
 
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-
-    if (loading || sending) {
+    if (loading) {
         return <p>Loading...</p>
     }
-
     if (user) {
         navigate(from, { replace: true });
     }
@@ -36,26 +35,20 @@ const Register = () => {
         errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
 
-    const handleSubmit = event => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
+        const name = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name })
+        navigate('/home');
 
     }
     const navigateLogin = event => {
         navigate('/login');
     }
-    const resetPassword = async () => {
-        const email = emailRef.current.value;
-        if (email) {
-            await sendPasswordResetEmail(email);
-            toast('Sent email');
-        }
-        else {
-            toast('please enter your email address');
-        }
-    }
+
     return (
         <div className='container w-50 mx-auto p-5 my-5'>
             <h2 className='text-dark text-center mt-2'>Please Register</h2>
