@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "name": "PORTRAIT",
+        "price": 200,
+        "img": "https://i.ibb.co/L11PH6B/portrait.jpg",
+        "details": [
+            "Up to 3 Hours",
+            "50 Images",
+            "2 Outfits Changes",
+            "20 Edited Images",
+            "Hi resolution images on pen-drive"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "GROUP SHOTS",
+        "price": 400,
+        "img": "https://i.ibb.co/L11PH6B/portrait.jpg",
+        "details": [
+            "Up to 5 Hours",
+            "150 Images",
+            "4 Outfits Changes",
+            "60 Edited Images",
+            "Hi resolution images on pen-drive"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "WEDDING",
+        "price": 200,
+        "img": "https://i.ibb.co/L11PH6B/portrait.jpg",
+        "details": [
+            "Up to 24 Hours",
+            "1000 Images",
+            "5 Outfits",
+            "200 Edited Images",
+            "Hi resolution images on pen-drive"
+        ]
+    }
+]
