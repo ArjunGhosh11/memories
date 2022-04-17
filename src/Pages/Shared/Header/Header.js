@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Header.css'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
@@ -17,7 +17,6 @@ const Header = () => {
 
                 <Link to='/home'><FontAwesomeIcon className='text-dark  logo' icon={faCameraRetro}></FontAwesomeIcon></Link>
                 <Link to='/' >Home</Link>
-                <Link to='/home#services'>Services</Link>
                 <Link to='/blogs'>Blogs</Link>
 
                 <Link to='/about'>About</Link>

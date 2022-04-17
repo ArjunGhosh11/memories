@@ -16,7 +16,7 @@
         "id": 2,
         "name": "GROUP SHOTS",
         "price": 400,
-        "img": "https://i.ibb.co/L11PH6B/portrait.jpg",
+        "img": "https://i.ibb.co/QDNc1cV/group.jpg",
         "details": [
             "Up to 5 Hours",
             "150 Images",
@@ -28,8 +28,8 @@
     {
         "id": 3,
         "name": "WEDDING",
-        "price": 200,
-        "img": "https://i.ibb.co/L11PH6B/portrait.jpg",
+        "price": 600,
+        "img": "https://i.ibb.co/qdWrSDs/wedding.jpg",
         "details": [
             "Up to 24 Hours",
             "1000 Images",

@@ -3,6 +3,8 @@ import { Carousel } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCameraRetro } from '@fortawesome/free-solid-svg-icons'
 import banner1 from '../../../Images/Banner/banner-1.png';
+import banner2 from '../../../Images/Banner/banner-2.jpg';
+import banner3 from '../../../Images/Banner/banner-3.png';
 
 
 const Banner = () => {
@@ -28,7 +30,7 @@ const Banner = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src={banner1}
+                        src={banner2}
                         alt="Second slide"
                     />
 
@@ -39,7 +41,7 @@ const Banner = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src={banner1}
+                        src={banner3}
                         alt="Third slide"
                     />
 

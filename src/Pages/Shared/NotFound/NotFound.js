@@ -1,9 +1,10 @@
 import React from 'react';
 import './NotFound.css';
+import error from '../../../Images/404.jpg'
 const NotFound = () => {
     return (
-        <div>
-            <h1>This is Not Found</h1>
+        <div className=' d-flex justify-content-center'>
+            <img style={{ height: '600px' }} src={error} alt="" />
         </div>
     );
 };
