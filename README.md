@@ -1,6 +1,6 @@
 # MEMORIES
 
-## [Live Site Link](https://assignment-10-f82c0.web.app/checkout)
+## [Live Site Link](https://assignment-10-f82c0.web.app)
 
 * Our home page clearly shows our services and you can chose any of the three services we are providing.
 
