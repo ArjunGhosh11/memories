@@ -12,7 +12,7 @@ import NotFound from './Pages/Shared/NotFound/NotFound';
 import Footer from './Pages/Shared/Footer/Footer';
 function App() {
   return (
-    <div>
+    <div className='app'>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
@@ -21,6 +21,7 @@ function App() {
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/checkout' element={<Checkout></Checkout>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
       {/* <Home></Home> */}
       <Footer></Footer>
